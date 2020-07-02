@@ -2,12 +2,21 @@ import { Config, UserConfig } from './config';
 import { h, render, VNode } from 'preact';
 import { Container } from './view/container';
 import log from './util/log';
+import { EventEmitter } from './util/eventEmitter';
 
-class Grid {
+class Grid extends EventEmitter<any> {
   public config: Config;
 
   constructor(userConfig?: UserConfig) {
+    super();
+
     this.config = new Config().update(userConfig);
+
+    // we use this to send the dispatcher events to the end-users
+    // it's just a nice abstraction layer
+    this.config.dispatcher.register(action => {
+      this.emit(action.type, action.payload);
+    });
   }
 
   public updateConfig(userConfig: Partial<UserConfig>): this {

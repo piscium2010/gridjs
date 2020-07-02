@@ -14,10 +14,10 @@ export class SortStore extends BaseStore<SortStoreState, SortActionsType> {
   }
 
   handle(type, payload): void {
-    if (type === 'SORT_COLUMN') {
+    if (type === 'sort/setColumn') {
       const { index, direction, multi, compare } = payload;
       this.sortColumn(index, direction, multi, compare);
-    } else if (type === 'SORT_COLUMN_TOGGLE') {
+    } else if (type === 'sort/toggleColumn') {
       const { index, multi, compare } = payload;
       this.sortToggle(index, multi, compare);
     }

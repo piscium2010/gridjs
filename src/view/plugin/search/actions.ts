@@ -1,14 +1,14 @@
 import { BaseActions } from '../../base/actions';
 
 export interface SearchActionsType {
-  SEARCH_KEYWORD: {
+  'search/setKeyword': {
     keyword: string;
   };
 }
 
 export class SearchActions extends BaseActions<SearchActionsType> {
   search(keyword: string): void {
-    this.dispatch('SEARCH_KEYWORD', {
+    this.dispatch('search/setKeyword', {
       keyword: keyword,
     });
   }

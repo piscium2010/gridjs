@@ -1,7 +1,7 @@
-import { BaseActions } from '../../base/actions';
-import { Comparator, TCell } from '../../../types';
+import { BaseActions } from '../base/actions';
+import { Comparator, TCell } from '../../types';
 
-export interface SortActionsType {
+export interface TableActionsType {
   'sort/setColumn': {
     index: number;
     direction: 1 | -1;
@@ -16,7 +16,7 @@ export interface SortActionsType {
   };
 }
 
-export class SortActions extends BaseActions<SortActionsType> {
+export class TableActions extends BaseActions<TableActionsType> {
   sortColumn(
     index: number,
     direction: 1 | -1,

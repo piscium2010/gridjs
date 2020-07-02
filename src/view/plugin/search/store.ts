@@ -12,7 +12,7 @@ export class SearchStore extends BaseStore<
   }
 
   handle(type, payload): void {
-    if (type === 'SEARCH_KEYWORD') {
+    if (type === 'search/setKeyword') {
       const { keyword } = payload;
       this.search(keyword);
     }
