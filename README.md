@@ -65,6 +65,6 @@ on Grid.js website [grid.js/docs](https://gridjs.io/docs/index).
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## License
+## Licensee
 
 [MIT](https://github.com/grid-js/gridjs/blob/master/LICENSE)
